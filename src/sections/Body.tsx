@@ -4,6 +4,7 @@ import Section from "../components/Section";
 import image1 from '../assets/sam1.jpg';
 import image2 from '../assets/tiger.jpg';
 import image3 from '../assets/sam31.jpg';
+import { useCallback, useEffect, useState } from "react";
 const Body: React.FC = () => {
   const variants: Variants = {
     animate: {
@@ -28,8 +29,36 @@ const Body: React.FC = () => {
     }
   }
 
+  const [mousePos, setMousePos] = useState({x: 0, y: 0});
+
+  const calculateRepelPos = useCallback((elementPos: {x: number, y: number}) => {
+    const x = mousePos.x - elementPos.x;
+    const y = mousePos.y - elementPos.y;
+    const distance = Math.sqrt(x * x + y * y);
+    const force = Math.floor(Math.random() * 200) / (distance * distance);
+    const angle = Math.atan2(y, x);
+    const repelX = force * Math.cos(angle);
+    const repelY = force * Math.sin(angle);
+    return {x: repelX, y: repelY};
+  }, [mousePos]);
+  const onCursorMove = (e: MouseEvent) => {
+    const { clientX, clientY } = e;
+    const x = transform(clientX, [0, window.innerWidth], [1, 0]);
+    const y = transform(clientY, [0, window.innerHeight], [0, 1]);
+    // const [x, y] = [clientX, clientY];
+    setMousePos({ x, y });
+    };
+
+    const startCursorTrack = () => {
+        window.addEventListener('mousemove', onCursorMove);
+    }
+
+    const stopCursorTrack = () => {
+        window.removeEventListener('mousemove', onCursorMove);
+    }
+
   return (
-    <Section bgColor="#0e0e12">
+    <Section bgColor="#0e0e12" onMouseEnter={startCursorTrack} onMouseLeave={stopCursorTrack}>
         <Box className="marquee"
             position="relative"
             borderTop="5px solid #ff8c37"
@@ -52,8 +81,32 @@ const Body: React.FC = () => {
         </Box>
         <Box p="8rem" pt="0">
             <Text as="b" fontSize="2.5rem" color="#FFFFFF">
-                A <Text as="b" color="#ff9140">hackathon</Text> is a social coding event where <Text as="b" color="#46daae">teens come together </Text> 
-                to <Text as="b" color="#ed445c">build projects</Text> in a short amount of time and <Text as="b" color="#62c3df">share them with the world.</Text>
+                A <Text as="b" color="#ff9140" position="relative" sx={{
+                    '&': {
+                        // use calculateRepelPos
+                        left: calculateRepelPos({x: 0, y: 0}).x,
+                        top: calculateRepelPos({x: 0, y: 0}).y
+                    }
+                }}>hackathon</Text> is a social coding event where <Text as="b" color="#46daae" position="relative" sx={{
+                    '&': {
+                        // use calculateRepelPos
+                        left: calculateRepelPos({x: 0, y: 0}).x,
+                        top: calculateRepelPos({x: 0, y: 0}).y
+                    }
+                }}>teens come together </Text> 
+                to <Text as="b" color="#ed445c" position="relative" sx={{
+                    '&': {
+                        // use calculateRepelPos
+                        left: calculateRepelPos({x: 0, y: 0}).x,
+                        top: calculateRepelPos({x: 0, y: 0}).y
+                    }
+                }}>build projects</Text> in a short amount of time and <Text as="b" color="#62c3df" position="relative" sx={{
+                    '&': {
+                        // use calculateRepelPos
+                        left: calculateRepelPos({x: 0, y: 0}).x,
+                        top: calculateRepelPos({x: 0, y: 0}).y
+                    }
+                }}>share them with the world.</Text>
                 <Text fontWeight="400" mb="8" mt="8">At Lion City Hacks, 100+ teenagers will gather to:</Text>
             </Text>
             <Grid templateColumns='repeat(2, 1fr)' gap={4}>
