@@ -1,5 +1,12 @@
 import { extendTheme } from '@chakra-ui/react'
 
-const theme = extendTheme({});
+const colors = {
+  link: {
+    // default
+    default: '#ed445c',
+  }
+}
+
+const theme = extendTheme({ colors });
 
 export default theme;
