@@ -21,6 +21,7 @@ function App() {
         backgroundRepeat="repeat"
         // backgroundSize="cover"
          />
+         <Body/>
     </Box>
   )
 }
