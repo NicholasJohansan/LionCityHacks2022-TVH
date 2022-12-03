@@ -1,6 +1,7 @@
 import { Box } from '@chakra-ui/react'
 import Landing from './sections/Landing'
 import Body from './sections/Body'
+import Registration from './sections/Registration'
 
 import bgImage from './assets/assemble.jpg'
 import samPoder from './assets/wtf.jpg'
@@ -22,6 +23,7 @@ function App() {
         // backgroundSize="cover"
          />
          <Body/>
+         <Registration/>
     </Box>
   )
 }
