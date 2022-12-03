@@ -5,15 +5,18 @@ import Registration from './sections/Registration'
 
 import bgImage from './assets/assemble.jpg'
 import samPoder from './assets/wtf.jpg'
+import { useRef } from 'react'
 
 function App() {
+
+  const contentBoxRef = useRef(null);
 
   return (
     <Box
       id='app'
       width="100vw"
       minHeight="100vh">
-      <Landing />
+      <Landing contentRef={contentBoxRef} />
       <Box
         position="absolute"
         top="0" right="0" left="0" bottom="0"
@@ -22,8 +25,9 @@ function App() {
         backgroundRepeat="repeat"
         // backgroundSize="cover"
          />
-         <Body/>
-         <Registration/>
+      <Box h="0" ref={contentBoxRef} />
+      <Body />
+      <Registration />
     </Box>
   )
 }

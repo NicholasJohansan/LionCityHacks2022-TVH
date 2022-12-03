@@ -3,3 +3,11 @@
   font-style: normal;
   src: url('./assets/AppleChancery.ttf') format('truetype');
 }
+
+body {
+  overflow-x: hidden;
+}
+
+/* body * {
+  overflow-x: hidden;
+} */
