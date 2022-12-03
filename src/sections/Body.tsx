@@ -11,21 +11,21 @@ const Body: React.FC = () => {
                 <Text color="#FFFFFF"> — WAIT, WHAT THE HACK IS A HACKATHON?</Text>
             </motion.div>
         </Box>
-        <Box p="5rem">
+        <Box p="8rem">
             <Text as="b" fontSize="3rem" color="#FFFFFF">
                 A <Text as="b" color="#ff9140">hackathon</Text> is a social coding event where <Text as="b" color="#46daae">teens come together </Text> 
-                to <Text as="b" color="#ed445c">build projects</Text> in a short amount of time and <Text color="#62c3df">share them with the world.</Text>
-                At Lion City Hacks, 100+ teenagers will gather to:
+                to <Text as="b" color="#ed445c">build projects</Text> in a short amount of time and <Text as="b" color="#62c3df">share them with the world.</Text>
+                <Text>At Lion City Hacks, 100+ teenagers will gather to:</Text>
             </Text>
+            <Grid templateColumns='repeat(2, 1fr)' gap={4}>
+                <GridItem h='25rem' bg='blue.500' />
+                <GridItem h='25rem' bg='blue.500' />
+                <GridItem h='25rem' bg='blue.500' />
+                <GridItem h='25rem' bg='blue.500' />
+                <GridItem h='25rem' bg='blue.500' />
+                <GridItem h='25rem' bg='blue.500' />
+            </Grid>
         </Box>
-        <Grid templateColumns='repeat(2, 1fr)' gap={6}>
-            <GridItem w='100%' h='10' bg='blue.500' />
-            <GridItem w='100%' h='10' bg='blue.500' />
-            <GridItem w='100%' h='10' bg='blue.500' />
-            <GridItem w='100%' h='10' bg='blue.500' />
-            <GridItem w='100%' h='10' bg='blue.500' />
-            <GridItem w='100%' h='10' bg='blue.500' />
-        </Grid>
     </Section>
     );
 };
