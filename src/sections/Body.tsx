@@ -42,11 +42,23 @@ const Body: React.FC = () => {
     return {x: repelX, y: repelY};
   }, [mousePos]);
 
+  const [scrollPos, setScrollPos] = useState(0);
+
   const calculateX = useCallback((elementPos: {x: number, y: number}) => {
     const {x, y} = calculateRepelPos(elementPos);
 
-    return Math.floor(transform(Math.random() * 400 , [0, 200], [-100, 100]));
-    }, [calculateRepelPos]);
+    return Math.floor(transform(Math.random() * scrollPos , [0, 200], [-100, 100]));
+    }, [calculateRepelPos, scrollPos]);
+
+    // typescript on scroll listener
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrollPos(window.scrollY);
+        }
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
 
   const onCursorMove = (e: MouseEvent) => {
     const { clientX, clientY } = e;
@@ -134,7 +146,6 @@ const Body: React.FC = () => {
                         // use calculateX
                         left: calculateX({x: 0, y: 0})
                     }
-
                 }} h='25rem' bg='blue.500' backgroundImage={image1} backgroundSize="cover"/>
                 <GridItem position="relative" sx={{
                     '&': {
