@@ -1,5 +1,5 @@
-import { Box, Flex, Text, Grid, GridItem} from "@chakra-ui/react";
-import { motion, transform } from 'framer-motion';
+import { Box, Flex, Text, Grid, GridItem, Heading} from "@chakra-ui/react";
+import { motion, transform, Variants } from 'framer-motion';
 import Section from "../components/Section";
 
 import image1 from '../assets/1hack_club_assemble_00711.jpg';
@@ -11,24 +11,60 @@ import icon2 from '../assets/IMG_0643.png'
 import icon3 from '../assets/D9CAD53D-1A9D-4E7F-BC52-834443D8FE8A.jpg'
 
 const Body: React.FC = () => {
+  const variants: Variants = {
+    animate: {
+        x: [0, -1035],
+        transition: {
+            x: {
+                repeat: Infinity,
+                repeatType: 'loop',
+                duration: 24,
+                ease: 'linear'
+            }
+        }
+    }
+  }
+
+  const hover = {
+    translateX: '0.5rem',
+    translateY: '-0.5rem',
+    transition: {
+        duration: 0.1,
+        ease: 'linear'
+    }
+  }
+
   return (
     <Section bgColor="#0e0e12">
-        <Box>
-            <motion.div
-            animate='animate'>
-                <Text color="#FFFFFF"> — WAIT, WHAT THE HACK IS A HACKATHON?</Text>
-            </motion.div>
+        <Box className="marquee"
+            position="relative"
+            borderTop="5px solid #ff8c37"
+            borderBottom="5px solid #ff8c37"
+            h="4.8rem"
+            pb="0"
+            mb="2rem"
+            w="100vw"
+            maxW="100%"
+            overflowX="hidden">
+            <Box as={motion.div}
+                position="absolute"
+                whiteSpace="nowrap"
+                variants={variants}
+                animate="animate">
+                <Heading color="#ff8c37" my="20px" mx="0" fontSize="1.2rem">
+                    WAIT, WHAT THE HACK IS A HACKATHON? - WAIT, WHAT THE HACK IS A HACKATHON? - WAIT, WHAT THE HACK IS A HACKATHON? - WAIT, WHAT THE HACK IS A HACKATHON? - WAIT, WHAT THE HACK IS A HACKATHON? - WAIT, WHAT THE HACK IS A HACKATHON?
+                </Heading>
+            </Box>
         </Box>
-        <Box p="8rem">
-            <Text as="b" fontSize="3rem" color="#FFFFFF">
+        <Box p="8rem" pt="0">
+            <Text as="b" fontSize="2.5rem" color="#FFFFFF">
                 A <Text as="b" color="#ff9140">hackathon</Text> is a social coding event where <Text as="b" color="#46daae">teens come together </Text> 
                 to <Text as="b" color="#ed445c">build projects</Text> in a short amount of time and <Text as="b" color="#62c3df">share them with the world.</Text>
-                <Text>At Lion City Hacks, 100+ teenagers will gather to:</Text>
+                <Text fontWeight="400" mb="8" mt="8">At Lion City Hacks, 100+ teenagers will gather to:</Text>
             </Text>
             <Grid templateColumns='repeat(2, 1fr)' gap={4}>
-
-                <GridItem h='25rem'>
-                    <Box h='25rem' border='2px' borderColor='#1d9270' p='2rem'>
+                <GridItem h='25rem' as={motion.div} whileHover={hover}>
+                    <Box h='25rem' border='4px' borderColor='#1d9270' p='2rem'>
                         <Text  as="b" fontSize="2rem" color="#FFFFFF" p="1rem">
                             Share Their Knowledge
                         </Text>
@@ -42,9 +78,8 @@ const Body: React.FC = () => {
 
                 <GridItem h='25rem' bg='blue.500' backgroundImage={image1} backgroundSize="cover"/>
                 <GridItem h='25rem' bg='blue.500' backgroundImage={image2} backgroundSize="cover"/>
-
-                <GridItem h='25rem'>
-                    <Box h='25rem' border='2px' borderColor='#990f22' p='2rem'>
+                <GridItem h='25rem' as={motion.div} whileHover={hover}>
+                    <Box h='25rem' border='4px' borderColor='#990f22' p='2rem'>
                         <Text  as="b" fontSize="2rem" color="#FFFFFF" p="1rem">
                             Build The Unexpected
                         </Text>
@@ -55,9 +90,8 @@ const Body: React.FC = () => {
                         </Text>
                     </Box>
                 </GridItem>
-
-                <GridItem h='25rem'>
-                    <Box h='25rem' border='2px' borderColor='#1b6e86' p='2rem'>
+                <GridItem h='25rem' as={motion.div} whileHover={hover}>
+                    <Box h='25rem' border='4px' borderColor='#1b6e86' p='2rem'>
                         <Text  as="b" fontSize="2rem" color="#FFFFFF" p="1rem">
                             Create Lifelong Memories
                         </Text>
