@@ -18,6 +18,16 @@ const Body: React.FC = () => {
         }
     }
   }
+
+  const hover = {
+    translateX: '0.5rem',
+    translateY: '-0.5rem',
+    transition: {
+        duration: 0.1,
+        ease: 'linear'
+    }
+  }
+
   return (
     <Section bgColor="#0e0e12">
         <Box className="marquee"
@@ -47,7 +57,7 @@ const Body: React.FC = () => {
                 <Text fontWeight="400" mb="8" mt="8">At Lion City Hacks, 100+ teenagers will gather to:</Text>
             </Text>
             <Grid templateColumns='repeat(2, 1fr)' gap={4}>
-                <GridItem h='25rem'>
+                <GridItem h='25rem' as={motion.div} whileHover={hover}>
                     <Box h='25rem' border='4px' borderColor='#1d9270' p='2rem'>
                         <Text  as="b" fontSize="2rem" color="#FFFFFF" p="1rem">
                             Share Their Knowledge
@@ -61,7 +71,7 @@ const Body: React.FC = () => {
                 </GridItem>
                 <GridItem h='25rem' bg='blue.500' backgroundImage={image1} backgroundSize="cover"/>
                 <GridItem h='25rem' bg='blue.500' backgroundImage={image2} backgroundSize="cover"/>
-                <GridItem h='25rem'>
+                <GridItem h='25rem' as={motion.div} whileHover={hover}>
                     <Box h='25rem' border='4px' borderColor='#990f22' p='2rem'>
                         <Text  as="b" fontSize="2rem" color="#FFFFFF" p="1rem">
                             Build The Unexpected
@@ -73,7 +83,7 @@ const Body: React.FC = () => {
                         </Text>
                     </Box>
                 </GridItem>
-                <GridItem h='25rem'>
+                <GridItem h='25rem' as={motion.div} whileHover={hover}>
                     <Box h='25rem' border='4px' borderColor='#1b6e86' p='2rem'>
                         <Text  as="b" fontSize="2rem" color="#FFFFFF" p="1rem">
                             Create Lifelong Memories
