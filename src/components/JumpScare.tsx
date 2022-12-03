@@ -3,7 +3,7 @@ import { motion, useAnimationControls, Variants } from "framer-motion";
 import { useEffect, useRef } from "react";
 import jumpscare from '../assets/redhat.png';
 
-import scream from '../assets/scream.mp3';
+import scream from '../assets/screeeeam.mp3';
 
 interface VideoPopupProps {
   setShown: (shown: boolean) => void;
