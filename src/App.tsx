@@ -17,11 +17,3 @@ function App() {
 }
 
 export default App
-
-// id='app'
-// height="100vh"
-// width="100vw"
-// backgroundImage={`url(${bgImage})`}
-// backgroundSize="cover"
-// backgroundPosition="center"
-// backgroundRepeat="no-repeat"
