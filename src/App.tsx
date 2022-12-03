@@ -8,12 +8,20 @@ function App() {
   return (
     <Box
       id='app'
-      width="full"
+      width="100vw"
       minHeight="100vh">
       <Landing />
-      <Box position="absolute" top="0" right="0" left="0" bottom="0" zIndex="-1" backgroundImage={bgImage} objectFit="fill" />
+      <Box position="absolute" top="0" right="0" left="0" bottom="0" zIndex="-1" backgroundImage={bgImage} backgroundSize="cover" objectFit="fill" />
     </Box>
   )
 }
 
 export default App
+
+// id='app'
+// height="100vh"
+// width="100vw"
+// backgroundImage={`url(${bgImage})`}
+// backgroundSize="cover"
+// backgroundPosition="center"
+// backgroundRepeat="no-repeat"
