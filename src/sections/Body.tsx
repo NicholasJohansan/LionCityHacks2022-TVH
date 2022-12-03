@@ -1,19 +1,46 @@
-import { Box, Flex, Text, Grid, GridItem} from "@chakra-ui/react";
-import { motion, transform } from 'framer-motion';
+import { Box, Flex, Text, Grid, GridItem, Heading} from "@chakra-ui/react";
+import { motion, transform, Variants } from 'framer-motion';
 import Section from "../components/Section";
 import image1 from '../assets/1hack_club_assemble_00711.jpg';
 import image2 from '../assets/2hack_club_assemble_01601.jpg';
 import image3 from '../assets/0hack_club_assemble_01887.jpg';
 const Body: React.FC = () => {
+  const variants: Variants = {
+    animate: {
+        x: [0, -1035],
+        transition: {
+            x: {
+                repeat: Infinity,
+                repeatType: 'loop',
+                duration: 24,
+                ease: 'linear'
+            }
+        }
+    }
+  }
   return (
     <Section bgColor="#0e0e12">
-        <Box>
-            <motion.div
-            animate='animate'>
-                <Text color="#FFFFFF"> — WAIT, WHAT THE HACK IS A HACKATHON?</Text>
-            </motion.div>
+        <Box className="marquee"
+            position="relative"
+            borderTop="5px solid #ff8c37"
+            borderBottom="5px solid #ff8c37"
+            h="4.8rem"
+            pb="0"
+            mb="2rem"
+            w="100vw"
+            maxW="100%"
+            overflowX="hidden">
+            <Box as={motion.div}
+                position="absolute"
+                whiteSpace="nowrap"
+                variants={variants}
+                animate="animate">
+                <Heading color="#ff8c37" my="20px" mx="0" fontSize="1.2rem">
+                    WAIT, WHAT THE HACK IS A HACKATHON? - WAIT, WHAT THE HACK IS A HACKATHON? - WAIT, WHAT THE HACK IS A HACKATHON? - WAIT, WHAT THE HACK IS A HACKATHON? - WAIT, WHAT THE HACK IS A HACKATHON? - WAIT, WHAT THE HACK IS A HACKATHON?
+                </Heading>
+            </Box>
         </Box>
-        <Box p="8rem">
+        <Box p="8rem" pt="0">
             <Text as="b" fontSize="3rem" color="#FFFFFF">
                 A <Text as="b" color="#ff9140">hackathon</Text> is a social coding event where <Text as="b" color="#46daae">teens come together </Text> 
                 to <Text as="b" color="#ed445c">build projects</Text> in a short amount of time and <Text as="b" color="#62c3df">share them with the world.</Text>

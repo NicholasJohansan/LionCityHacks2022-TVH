@@ -26,7 +26,7 @@ const Landing: React.FC<LandingProps> = ({ contentRef }: LandingProps) => {
   };
 
   const scrollToContent = () => {
-    contentRef.current?.scrollIntoView();
+    contentRef.current?.scrollIntoView({ behavior: "smooth" });
     console.log(contentRef.current);
   }
 
