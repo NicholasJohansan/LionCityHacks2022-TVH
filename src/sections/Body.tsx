@@ -40,6 +40,13 @@ const Body: React.FC = () => {
     const repelY = force * Math.sin(angle);
     return {x: repelX, y: repelY};
   }, [mousePos]);
+
+  const calculateX = useCallback((elementPos: {x: number, y: number}) => {
+    const {x, y} = calculateRepelPos(elementPos);
+
+    return Math.floor(transform(Math.random() * 400 , [0, 200], [-100, 100]));
+    }, [calculateRepelPos]);
+
   const onCursorMove = (e: MouseEvent) => {
     const { clientX, clientY } = e;
     const x = transform(clientX, [0, window.innerWidth], [1, 0]);
@@ -106,7 +113,7 @@ const Body: React.FC = () => {
                         top: calculateRepelPos({x: 0, y: 0}).y
                     }
                 }}>share them with the world.</Text>
-                <Text fontWeight="400" mb="8" mt="8">At Lion City Hacks, 100+ teenagers will gather to:</Text>
+                <Text fontWeight="400" mb="8" mt="8">At Tiger Village Hacks, 100+ teenagers will gather to:</Text>
             </Text>
             <Grid templateColumns='repeat(2, 1fr)' gap={4}>
                 <GridItem h='25rem' as={motion.div} whileHover={hover}>
@@ -115,15 +122,26 @@ const Body: React.FC = () => {
                             Share Their Knowledge
                         </Text>
                         <Text color="#FFFFFF" fontSize="1rem" p="1rem">
-                            At Lion City Hacks, you'll be able to give & attend workshops from peers, 
+                            At Tiger Village Hacks, you'll be able to give & attend workshops from peers, 
                             gain experience, make connections, and discover yourself. You'll meet new people, 
                             get help from peers, and support your fellow hackers.
                         </Text>
                     </Box>
                 </GridItem>
+                <GridItem position="relative" sx={{
+                    '&': {
+                        // use calculateX
+                        left: calculateX({x: 0, y: 0})
+                    }
 
-                <GridItem h='25rem' bg='blue.500' backgroundImage={image1} backgroundSize="cover"/>
-                <GridItem h='25rem' bg='blue.500' backgroundImage={image2} objectFit="contain" bgSize="cover"
+                }} h='25rem' bg='blue.500' backgroundImage={image1} backgroundSize="cover"/>
+                <GridItem position="relative" sx={{
+                    '&': {
+                        // use calculateX
+                        left: calculateX({x: 0, y: 0})
+                    }
+
+                }} h='25rem' bg='blue.500' backgroundImage={image2} objectFit="contain" bgSize="cover"
                 />
                 <GridItem h='25rem' as={motion.div} whileHover={hover}>
                     <Box h='25rem' border='4px' borderColor='#990f22' p='2rem'>
@@ -131,9 +149,9 @@ const Body: React.FC = () => {
                             Build The Unexpected
                         </Text>
                         <Text color="#FFFFFF" fontSize="1rem" p="1rem">
-                            At Lion City Hacks, you're encouraged to create a project no hacker would expect to see at demos. 
-                            You'll build something to showcase to other hackers, not pitching to impress a business-type. 
-                            Learning and creating is valued far above a long-term product plan.
+                        At Tiger Village Hacks, you're encouraged to create a project no hacker would expect to see at demos. 
+                        You'll build something to showcase to other hackers, not pitching to impress a business-type. 
+                        Learning and creating is valued far above a long-term product plan.
                         </Text>
                     </Box>
                 </GridItem>
@@ -150,8 +168,13 @@ const Body: React.FC = () => {
                         </Text>
                     </Box>
                 </GridItem>
+                <GridItem position="relative" sx={{
+                    '&': {
+                        // use calculateX
+                        left: calculateX({x: 0, y: 0})
+                    }
 
-                <GridItem h='25rem' bg='blue.500' backgroundImage={image3} backgroundSize="cover"/>
+                }} h='25rem' bg='blue.500' backgroundImage={image3} backgroundSize="cover"/>
             </Grid>
         </Box>
 
