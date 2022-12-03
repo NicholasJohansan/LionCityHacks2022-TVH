@@ -41,14 +41,14 @@ const Body: React.FC = () => {
             </Box>
         </Box>
         <Box p="8rem" pt="0">
-            <Text as="b" fontSize="3rem" color="#FFFFFF">
+            <Text as="b" fontSize="2.5rem" color="#FFFFFF">
                 A <Text as="b" color="#ff9140">hackathon</Text> is a social coding event where <Text as="b" color="#46daae">teens come together </Text> 
                 to <Text as="b" color="#ed445c">build projects</Text> in a short amount of time and <Text as="b" color="#62c3df">share them with the world.</Text>
-                <Text>At Lion City Hacks, 100+ teenagers will gather to:</Text>
+                <Text fontWeight="400" mb="8" mt="8">At Lion City Hacks, 100+ teenagers will gather to:</Text>
             </Text>
             <Grid templateColumns='repeat(2, 1fr)' gap={4}>
                 <GridItem h='25rem'>
-                    <Box h='25rem' border='2px' borderColor='#1d9270' p='2rem'>
+                    <Box h='25rem' border='4px' borderColor='#1d9270' p='2rem'>
                         <Text  as="b" fontSize="2rem" color="#FFFFFF" p="1rem">
                             Share Their Knowledge
                         </Text>
@@ -62,7 +62,7 @@ const Body: React.FC = () => {
                 <GridItem h='25rem' bg='blue.500' backgroundImage={image1} backgroundSize="cover"/>
                 <GridItem h='25rem' bg='blue.500' backgroundImage={image2} backgroundSize="cover"/>
                 <GridItem h='25rem'>
-                    <Box h='25rem' border='2px' borderColor='#990f22' p='2rem'>
+                    <Box h='25rem' border='4px' borderColor='#990f22' p='2rem'>
                         <Text  as="b" fontSize="2rem" color="#FFFFFF" p="1rem">
                             Build The Unexpected
                         </Text>
@@ -74,7 +74,7 @@ const Body: React.FC = () => {
                     </Box>
                 </GridItem>
                 <GridItem h='25rem'>
-                    <Box h='25rem' border='2px' borderColor='#1b6e86' p='2rem'>
+                    <Box h='25rem' border='4px' borderColor='#1b6e86' p='2rem'>
                         <Text  as="b" fontSize="2rem" color="#FFFFFF" p="1rem">
                             Create Lifelong Memories
                         </Text>
