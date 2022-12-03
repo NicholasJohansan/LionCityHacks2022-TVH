@@ -1,14 +1,12 @@
 import Section from "../components/Section";
 import { Box, Text, Flex, Spacer, Button } from "@chakra-ui/react";
+import {useState} from 'react';
 import image1 from '../assets/Red-Hat-Singapore-workplace-lounge-reception-1200x675.jpg';
 import image2 from '../assets/Red-Hat-Singapore-workplace-canteen-kitchen-collaboration-2000x1125.jpg';
 import map from '../assets/IMG_0638.png';
 
 const Registration: React.FC = () => {
-    
-    const error = () => {
-        alert("Please fill in all fields");
-    }
+    const [isShown, setIsShown] = useState(true);
 
     return(
         <Section bgColor="#523e86" pt='2rem'>
@@ -57,7 +55,7 @@ const Registration: React.FC = () => {
        
             <Box bgColor='#21a588' ml='8rem' mr='8rem' mb='1rem' mt='1rem' textAlign='center'>
                     {/* <Text as='b' color='#FFFFFF' textAlign='center' m='2rem'><Text as='u'>Register</Text></Text>  */}
-                    <Button colorScheme='#21a588' variant='solid' onClick={()=> error()}>
+                    <Button colorScheme='#21a588' variant='solid'>
                         Register
                     </Button>
             </Box>

@@ -4,6 +4,7 @@ import Section from "../components/Section";
 import image1 from '../assets/1hack_club_assemble_00711.jpg';
 import image2 from '../assets/2hack_club_assemble_01601.jpg';
 import image3 from '../assets/0hack_club_assemble_01887.jpg';
+import { useState, useCallback } from 'react';
 const Body: React.FC = () => {
   const variants: Variants = {
     animate: {
