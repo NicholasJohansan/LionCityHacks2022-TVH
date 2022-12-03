@@ -1,9 +1,9 @@
 import { Box, Flex, Text, Grid, GridItem, Heading} from "@chakra-ui/react";
 import { motion, transform, Variants } from 'framer-motion';
 import Section from "../components/Section";
-import image1 from '../assets/1hack_club_assemble_00711.jpg';
-import image2 from '../assets/2hack_club_assemble_01601.jpg';
-import image3 from '../assets/0hack_club_assemble_01887.jpg';
+import image1 from '../assets/sam1.jpg';
+import image2 from '../assets/tiger.jpg';
+import image3 from '../assets/sam31.jpg';
 const Body: React.FC = () => {
   const variants: Variants = {
     animate: {
@@ -70,7 +70,8 @@ const Body: React.FC = () => {
                     </Box>
                 </GridItem>
                 <GridItem h='25rem' bg='blue.500' backgroundImage={image1} backgroundSize="cover"/>
-                <GridItem h='25rem' bg='blue.500' backgroundImage={image2} backgroundSize="cover"/>
+                <GridItem h='25rem' bg='blue.500' backgroundImage={image2} objectFit="contain" bgSize="cover"
+                />
                 <GridItem h='25rem' as={motion.div} whileHover={hover}>
                     <Box h='25rem' border='4px' borderColor='#990f22' p='2rem'>
                         <Text  as="b" fontSize="2rem" color="#FFFFFF" p="1rem">
