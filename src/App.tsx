@@ -8,7 +8,7 @@ function App() {
   return (
     <Box
       id='app'
-      width="full"
+      width="100vw"
       minHeight="100vh">
       <Landing />
       <Box
