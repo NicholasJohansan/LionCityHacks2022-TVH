@@ -4,12 +4,14 @@ import {useState} from 'react';
 import image1 from '../assets/Red-Hat-Singapore-workplace-lounge-reception-1200x675.jpg';
 import image2 from '../assets/Red-Hat-Singapore-workplace-canteen-kitchen-collaboration-2000x1125.jpg';
 import map from '../assets/IMG_0638.png';
+import { motion } from "framer-motion";
+import '../registration.css'
 
 const Registration: React.FC = () => {
     const [isShown, setIsShown] = useState(true);
 
     return(
-        <Section bgColor="#523e86" pt='2rem'>
+        <Section bgColor="#523e86" pt='2rem' pb="2rem">
             <Text  as="b" fontSize="2rem" color="#FFFFFF" ml='8rem' mr='8rem'><Text as='u'>The Rundown & Registration</Text></Text>
             <Box bgColor='#181a1b' ml='8rem' mr='8rem' mb='1rem' mt='1rem'>
                 <Text color="#FFFFFF" p='1rem'>
@@ -20,7 +22,7 @@ const Registration: React.FC = () => {
 
                 <Box bgColor='#181a1b' ml='8rem' mr='8rem' mb='1rem' mt='1rem'>
                     <Flex>
-                    <Text color="#FFFFFF" p='1rem' fontSize='2rem'>
+                    <Text className="location" color="#FFFFFF" p='1rem' fontSize='2rem'>
                         <Text as='b'>Venue:</Text> Red Hat Singapore,
                         <Text>88 Market Street,</Text>
                         <Text>Level 46 of CapitaSpring, Singapore 048948 </Text>
@@ -29,6 +31,12 @@ const Registration: React.FC = () => {
                     <Spacer/>
                     <Box p='1rem'>
                         <Box
+                        as={motion.div}
+                        whileHover={{
+                            scale: 3,
+                            transition: { duration: 0.5, 
+                            spring: { stiffness: 100, damping: 10 } },
+                        }}
                         bgImage={map}
                         bgSize="cover"
                         bgPosition="center"
@@ -53,7 +61,7 @@ const Registration: React.FC = () => {
                     </Text>
             </Box>
        
-            <Box bgColor='#21a588' ml='8rem' mr='8rem' mb='1rem' mt='1rem' textAlign='center'>
+            <Box bgColor='#21a588' ml='8rem' mr='8rem' mb='1rem' mt='1rem' textAlign='center' cursor="pointer" className="registerBox">
                     {/* <Text as='b' color='#FFFFFF' textAlign='center' m='2rem'><Text as='u'>Register</Text></Text>  */}
                     <Button colorScheme='#21a588' variant='solid'>
                         Register

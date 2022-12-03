@@ -1,0 +1,19 @@
+.location:hover > p {
+  transform: translateX(-50vw);
+  transition: transform 0.2s;
+}
+
+.location > p {
+  transform: translateX(0);
+  transition: transform 0.2s;
+}
+
+.registerBox {
+  transform: translateY(0);
+  transition: transform 0.2s;
+}
+
+.registerBox:hover {
+  transform: translateY(-100vh);
+  transition: transform 0.2s;
+}
