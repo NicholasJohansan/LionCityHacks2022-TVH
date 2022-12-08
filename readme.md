@@ -13,7 +13,8 @@ This was the hackathon project made for Lion City Hacks 2022. The theme was "Bui
 
 We ended up winning **Biggest Meme of a Project**!
 
-[Photo Coming Soon]
+![Biggest Meme of a Project](https://cdn.nj.sg/Hackathons/LionCityHacks2022/award_photo.jpg)
+
 
 The possible tracks were:
 - Most Unexpected Project
